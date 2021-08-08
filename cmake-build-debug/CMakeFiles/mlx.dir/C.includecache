@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/vitya/Desktop/mlx/fractol.h
+mlx.h
+-
+malloc.h
+-
+stdio.h
+-
+
+/home/vitya/Desktop/mlx/main.c
+fractol.h
+/home/vitya/Desktop/mlx/fractol.h
+
+/home/vitya/Desktop/mlx/version1.c
+stdio.h
+-
+mlx.h
+-
+

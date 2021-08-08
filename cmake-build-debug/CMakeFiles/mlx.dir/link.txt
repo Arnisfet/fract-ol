@@ -1,0 +1,1 @@
+/usr/bin/cc -g CMakeFiles/mlx.dir/main.c.o CMakeFiles/mlx.dir/version1.c.o -o mlx  /usr/local/lib/libmlx.a /usr/local/lib/libmlx.a 
