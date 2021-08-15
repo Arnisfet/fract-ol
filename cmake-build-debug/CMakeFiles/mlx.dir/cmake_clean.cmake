@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/mlx.dir/fractal_v.c.o"
   "CMakeFiles/mlx.dir/main.c.o"
   "CMakeFiles/mlx.dir/version1.c.o"
   "mlx"

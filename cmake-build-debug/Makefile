@@ -48,48 +48,48 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/clion/162/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
 
 # The command to remove a file.
-RM = /snap/clion/162/bin/cmake/linux/bin/cmake -E rm -f
+RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/vitya/Desktop/mlx
+CMAKE_SOURCE_DIR = /Users/mrudge/Desktop/fract-ol
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/vitya/Desktop/mlx/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/mrudge/Desktop/fract-ol/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/snap/clion/162/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-.PHONY : edit_cache/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/snap/clion/162/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+.PHONY : edit_cache/fast
+
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/vitya/Desktop/mlx/cmake-build-debug/CMakeFiles /home/vitya/Desktop/mlx/cmake-build-debug//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mrudge/Desktop/fract-ol/cmake-build-debug/CMakeFiles /Users/mrudge/Desktop/fract-ol/cmake-build-debug//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/vitya/Desktop/mlx/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mrudge/Desktop/fract-ol/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -128,6 +128,30 @@ mlx: cmake_check_build_system
 mlx/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mlx.dir/build.make CMakeFiles/mlx.dir/build
 .PHONY : mlx/fast
+
+fractal_v.o: fractal_v.c.o
+.PHONY : fractal_v.o
+
+# target to build an object file
+fractal_v.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mlx.dir/build.make CMakeFiles/mlx.dir/fractal_v.c.o
+.PHONY : fractal_v.c.o
+
+fractal_v.i: fractal_v.c.i
+.PHONY : fractal_v.i
+
+# target to preprocess a source file
+fractal_v.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mlx.dir/build.make CMakeFiles/mlx.dir/fractal_v.c.i
+.PHONY : fractal_v.c.i
+
+fractal_v.s: fractal_v.c.s
+.PHONY : fractal_v.s
+
+# target to generate assembly for a file
+fractal_v.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mlx.dir/build.make CMakeFiles/mlx.dir/fractal_v.c.s
+.PHONY : fractal_v.c.s
 
 main.o: main.c.o
 .PHONY : main.o
@@ -186,6 +210,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... mlx"
+	@echo "... fractal_v.o"
+	@echo "... fractal_v.i"
+	@echo "... fractal_v.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

@@ -44,19 +44,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/clion/162/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
 
 # The command to remove a file.
-RM = /snap/clion/162/bin/cmake/linux/bin/cmake -E rm -f
+RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/vitya/Desktop/mlx
+CMAKE_SOURCE_DIR = /Users/mrudge/Desktop/fract-ol
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/vitya/Desktop/mlx/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/mrudge/Desktop/fract-ol/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/mlx.dir/depend.make
@@ -68,45 +68,60 @@ include CMakeFiles/mlx.dir/flags.make
 
 CMakeFiles/mlx.dir/main.c.o: CMakeFiles/mlx.dir/flags.make
 CMakeFiles/mlx.dir/main.c.o: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vitya/Desktop/mlx/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/mlx.dir/main.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mlx.dir/main.c.o -c /home/vitya/Desktop/mlx/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mrudge/Desktop/fract-ol/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/mlx.dir/main.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mlx.dir/main.c.o -c /Users/mrudge/Desktop/fract-ol/main.c
 
 CMakeFiles/mlx.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mlx.dir/main.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/vitya/Desktop/mlx/main.c > CMakeFiles/mlx.dir/main.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/mrudge/Desktop/fract-ol/main.c > CMakeFiles/mlx.dir/main.c.i
 
 CMakeFiles/mlx.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mlx.dir/main.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/vitya/Desktop/mlx/main.c -o CMakeFiles/mlx.dir/main.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/mrudge/Desktop/fract-ol/main.c -o CMakeFiles/mlx.dir/main.c.s
 
 CMakeFiles/mlx.dir/version1.c.o: CMakeFiles/mlx.dir/flags.make
 CMakeFiles/mlx.dir/version1.c.o: ../version1.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vitya/Desktop/mlx/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/mlx.dir/version1.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mlx.dir/version1.c.o -c /home/vitya/Desktop/mlx/version1.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mrudge/Desktop/fract-ol/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/mlx.dir/version1.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mlx.dir/version1.c.o -c /Users/mrudge/Desktop/fract-ol/version1.c
 
 CMakeFiles/mlx.dir/version1.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mlx.dir/version1.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/vitya/Desktop/mlx/version1.c > CMakeFiles/mlx.dir/version1.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/mrudge/Desktop/fract-ol/version1.c > CMakeFiles/mlx.dir/version1.c.i
 
 CMakeFiles/mlx.dir/version1.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mlx.dir/version1.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/vitya/Desktop/mlx/version1.c -o CMakeFiles/mlx.dir/version1.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/mrudge/Desktop/fract-ol/version1.c -o CMakeFiles/mlx.dir/version1.c.s
+
+CMakeFiles/mlx.dir/fractal_v.c.o: CMakeFiles/mlx.dir/flags.make
+CMakeFiles/mlx.dir/fractal_v.c.o: ../fractal_v.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mrudge/Desktop/fract-ol/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/mlx.dir/fractal_v.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mlx.dir/fractal_v.c.o -c /Users/mrudge/Desktop/fract-ol/fractal_v.c
+
+CMakeFiles/mlx.dir/fractal_v.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mlx.dir/fractal_v.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/mrudge/Desktop/fract-ol/fractal_v.c > CMakeFiles/mlx.dir/fractal_v.c.i
+
+CMakeFiles/mlx.dir/fractal_v.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mlx.dir/fractal_v.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/mrudge/Desktop/fract-ol/fractal_v.c -o CMakeFiles/mlx.dir/fractal_v.c.s
 
 # Object files for target mlx
 mlx_OBJECTS = \
 "CMakeFiles/mlx.dir/main.c.o" \
-"CMakeFiles/mlx.dir/version1.c.o"
+"CMakeFiles/mlx.dir/version1.c.o" \
+"CMakeFiles/mlx.dir/fractal_v.c.o"
 
 # External object files for target mlx
 mlx_EXTERNAL_OBJECTS =
 
 mlx: CMakeFiles/mlx.dir/main.c.o
 mlx: CMakeFiles/mlx.dir/version1.c.o
+mlx: CMakeFiles/mlx.dir/fractal_v.c.o
 mlx: CMakeFiles/mlx.dir/build.make
 mlx: /usr/local/lib/libmlx.a
 mlx: /usr/local/lib/libmlx.a
 mlx: CMakeFiles/mlx.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/vitya/Desktop/mlx/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable mlx"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/mrudge/Desktop/fract-ol/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable mlx"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mlx.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -118,6 +133,6 @@ CMakeFiles/mlx.dir/clean:
 .PHONY : CMakeFiles/mlx.dir/clean
 
 CMakeFiles/mlx.dir/depend:
-	cd /home/vitya/Desktop/mlx/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/vitya/Desktop/mlx /home/vitya/Desktop/mlx /home/vitya/Desktop/mlx/cmake-build-debug /home/vitya/Desktop/mlx/cmake-build-debug /home/vitya/Desktop/mlx/cmake-build-debug/CMakeFiles/mlx.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/mrudge/Desktop/fract-ol/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/mrudge/Desktop/fract-ol /Users/mrudge/Desktop/fract-ol /Users/mrudge/Desktop/fract-ol/cmake-build-debug /Users/mrudge/Desktop/fract-ol/cmake-build-debug /Users/mrudge/Desktop/fract-ol/cmake-build-debug/CMakeFiles/mlx.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/mlx.dir/depend
 

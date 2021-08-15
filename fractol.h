@@ -4,10 +4,12 @@
 
 #ifndef MLX_FRACTOL_H
 #define MLX_FRACTOL_H
+#include <math.h>
 #include <mlx.h>
-#include <malloc.h>
+#include <stdlib.h>
 #include <stdio.h>
 # define WD 500
 # define HG 500
+# define PIX y * WD + x
 
 #endif //MLX_FRACTOL_H

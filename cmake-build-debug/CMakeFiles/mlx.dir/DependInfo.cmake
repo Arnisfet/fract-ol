@@ -8,10 +8,11 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/vitya/Desktop/mlx/main.c" "/home/vitya/Desktop/mlx/cmake-build-debug/CMakeFiles/mlx.dir/main.c.o"
-  "/home/vitya/Desktop/mlx/version1.c" "/home/vitya/Desktop/mlx/cmake-build-debug/CMakeFiles/mlx.dir/version1.c.o"
+  "/Users/mrudge/Desktop/fract-ol/fractal_v.c" "/Users/mrudge/Desktop/fract-ol/cmake-build-debug/CMakeFiles/mlx.dir/fractal_v.c.o"
+  "/Users/mrudge/Desktop/fract-ol/main.c" "/Users/mrudge/Desktop/fract-ol/cmake-build-debug/CMakeFiles/mlx.dir/main.c.o"
+  "/Users/mrudge/Desktop/fract-ol/version1.c" "/Users/mrudge/Desktop/fract-ol/cmake-build-debug/CMakeFiles/mlx.dir/version1.c.o"
   )
-set(CMAKE_C_COMPILER_ID "GNU")
+set(CMAKE_C_COMPILER_ID "AppleClang")
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH
