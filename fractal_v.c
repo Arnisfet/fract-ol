@@ -3,14 +3,14 @@
 
 typedef struct	t_struct
 {
-	void	*mlx;
+	void	*connect;
 	void	*mlx_win;
 	void	*img;
 	int		*addr;
 	int		bites_per_px;
 	int		line_length;
 	int		endian;
-}				s_struct;
+}				t_connect;
 
 typedef struct	s_struct
 {
@@ -35,15 +35,15 @@ typedef struct c_struct
 
 }				t_complex;
 
-static int connect_init(s_struct *point)
+static int connect_init(t_connect *point)
 {
-	point->mlx = mlx_init();
-	if (!(point->mlx))
+	point->connect = mlx_init();
+	if (!(point->connect))
 		return(1);
-	point->mlx_win = mlx_new_window(point->mlx, WD, HG, "fractol");
+	point->mlx_win = mlx_new_window(point->connect, WD, HG, "fractol");
 	if (!(point->mlx_win))
 		return(1);
-	point->img = mlx_new_image(point->mlx, WD, HG);
+	point->img = mlx_new_image(point->connect, WD, HG);
 	if (!(point->img))
 		return(1);
 	point->addr = (int *)mlx_get_data_addr(point->img, &point->bites_per_px,
@@ -68,7 +68,7 @@ t_factorial init_complex(double re, double im)
 
 int main()
 {
-	s_struct	*point;
+	t_connect	*point;
 	t_factorial	f;
 	t_complex	c;
 	t_factorial	z;
@@ -76,7 +76,7 @@ int main()
 
 	r = 25, g = 255, b = 255;
 	y = 0, max_iter = 50;
-	point = (s_struct*)malloc(sizeof(s_struct));
+	point = (t_connect*)malloc(sizeof(t_connect));
 	if (!point)
 		return (0);
 	connect_init(point);
@@ -108,6 +108,6 @@ int main()
 		}
 		y++;
 	}
-	mlx_put_image_to_window(point->mlx, point->mlx_win, point->img, 0, 0);
-	mlx_loop(point->mlx);
+	mlx_put_image_to_window(point->connect, point->mlx_win, point->img, 0, 0);
+	mlx_loop(point->connect);
 }

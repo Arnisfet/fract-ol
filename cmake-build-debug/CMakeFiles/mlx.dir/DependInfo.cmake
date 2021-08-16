@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_C
   "/Users/mrudge/Desktop/fract-ol/fractal_v.c" "/Users/mrudge/Desktop/fract-ol/cmake-build-debug/CMakeFiles/mlx.dir/fractal_v.c.o"
   "/Users/mrudge/Desktop/fract-ol/main.c" "/Users/mrudge/Desktop/fract-ol/cmake-build-debug/CMakeFiles/mlx.dir/main.c.o"
+  "/Users/mrudge/Desktop/fract-ol/t_rgb.c" "/Users/mrudge/Desktop/fract-ol/cmake-build-debug/CMakeFiles/mlx.dir/t_rgb.c.o"
   "/Users/mrudge/Desktop/fract-ol/version1.c" "/Users/mrudge/Desktop/fract-ol/cmake-build-debug/CMakeFiles/mlx.dir/version1.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")

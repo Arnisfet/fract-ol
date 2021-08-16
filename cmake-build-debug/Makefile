@@ -177,6 +177,30 @@ main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mlx.dir/build.make CMakeFiles/mlx.dir/main.c.s
 .PHONY : main.c.s
 
+t_rgb.o: t_rgb.c.o
+.PHONY : t_rgb.o
+
+# target to build an object file
+t_rgb.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mlx.dir/build.make CMakeFiles/mlx.dir/t_rgb.c.o
+.PHONY : t_rgb.c.o
+
+t_rgb.i: t_rgb.c.i
+.PHONY : t_rgb.i
+
+# target to preprocess a source file
+t_rgb.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mlx.dir/build.make CMakeFiles/mlx.dir/t_rgb.c.i
+.PHONY : t_rgb.c.i
+
+t_rgb.s: t_rgb.c.s
+.PHONY : t_rgb.s
+
+# target to generate assembly for a file
+t_rgb.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mlx.dir/build.make CMakeFiles/mlx.dir/t_rgb.c.s
+.PHONY : t_rgb.c.s
+
 version1.o: version1.c.o
 .PHONY : version1.o
 
@@ -216,6 +240,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... t_rgb.o"
+	@echo "... t_rgb.i"
+	@echo "... t_rgb.s"
 	@echo "... version1.o"
 	@echo "... version1.i"
 	@echo "... version1.s"

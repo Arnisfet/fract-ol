@@ -87,6 +87,9 @@
 		<Unit filename="/Users/mrudge/Desktop/fract-ol/main.c">
 			<Option target="mlx"/>
 		</Unit>
+		<Unit filename="/Users/mrudge/Desktop/fract-ol/t_rgb.c">
+			<Option target="mlx"/>
+		</Unit>
 		<Unit filename="/Users/mrudge/Desktop/fract-ol/version1.c">
 			<Option target="mlx"/>
 		</Unit>
