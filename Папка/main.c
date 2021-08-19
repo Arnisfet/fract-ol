@@ -34,7 +34,7 @@ int main()
 	if (!frctl->cmplx)
 		return (0);
 	connect_init(frctl->mlx);
-    mandelbrot(frctl);
+	mandelbrot(frctl);
 	mlx_put_image_to_window(frctl->mlx->connect, frctl->mlx->mlx_win,
 							frctl->mlx->img, 0, 0);
 	mlx_loop(frctl->mlx->connect);
