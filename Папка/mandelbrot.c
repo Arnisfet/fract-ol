@@ -56,9 +56,9 @@ int	mandelbro_dr(t_frctl *frctl)
             double cr = get_x_toReal(frctl, frctl->mtrx->x);
             int n = findMandelbrot(cr, ci, frctl);
             if (n != frctl->mtrx->max_i)
-                frctl->mlx->addr[PIX] = get_trgb(1, 180, 50/n, 220/n);
+                frctl->mlx->addr[PIX] = get_trgb(1, 220, 50, 220);
             else
-            	frctl->mlx->addr[PIX] = 0;
+            	frctl->mlx->addr[PIX] = get_trgb(1, 20, 0, 200);
             ++frctl->mtrx->x;
         }
         ++frctl->mtrx->y;
