@@ -8,8 +8,8 @@
 #include "./minilibx/mlx.h"
 #include <stdlib.h>
 #include <stdio.h>
-# define WD 200
-# define HG 200
+# define WD 1000
+# define HG 1000
 # define PIX (frctl->mtrx->y * WD + frctl->mtrx->x)
 
 typedef struct	t_struct

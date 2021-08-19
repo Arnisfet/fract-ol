@@ -10,8 +10,8 @@ double get_x_toReal(t_frctl *frctl, int x)
 
 double get_y_toReal(t_frctl *frctl, int y)
 {
-    double Range = (frctl->mtrx->max_y - frctl->mtrx->min_y) / (HG - 1);
-    return (frctl->mtrx->max_y - y * Range);
+	double Range = (frctl->mtrx->max_y - frctl->mtrx->min_y) / (HG - 1);
+	return (frctl->mtrx->max_y - y * Range);
 }
 
 int mandelbrot(t_frctl *frctl)
@@ -56,13 +56,14 @@ int	mandelbro_dr(t_frctl *frctl)
             double cr = get_x_toReal(frctl, frctl->mtrx->x);
             int n = findMandelbrot(cr, ci, frctl);
             if (n != frctl->mtrx->max_i)
-                frctl->mlx->addr[PIX] = get_trgb(1, 255, 255, 255);
-            frctl->mlx->addr[PIX] = 0;
+                frctl->mlx->addr[PIX] = get_trgb(1, 180, 50/n, 220/n);
+            else
+            	frctl->mlx->addr[PIX] = 0;
             ++frctl->mtrx->x;
         }
         ++frctl->mtrx->y;
     }
-    printf("%d, %d", frctl->mtrx->x, frctl->mtrx->y);
+
     mlx_put_image_to_window(frctl->mlx->connect, frctl->mlx->mlx_win, frctl->mlx->img, 0, 0);
     return 0;
 }
