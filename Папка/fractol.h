@@ -60,5 +60,9 @@ int mandelbrot (t_frctl *frctl);
 int main();
 int	mandelbro_dr(t_frctl *frctl);
 int findMandelbrot(double cr, double ci, t_frctl *frctl);
+int julia(t_frctl *frctl);
+int julia_dr(t_frctl *frctl);
+double get_y_toReal(t_frctl *frctl, int y);
+double get_x_toReal(t_frctl *frctl, int x);
 
 #endif //MLX_FRACTOL_H
