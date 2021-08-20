@@ -11,6 +11,7 @@
 # define WD 1000
 # define HG 1000
 # define PIX (frctl->mtrx->y * WD + frctl->mtrx->x)
+# define ESC 53
 
 typedef struct	t_struct
 {
@@ -65,5 +66,8 @@ int julia_dr(t_frctl *frctl);
 double get_y_toReal(t_frctl *frctl, int y);
 double get_x_toReal(t_frctl *frctl, int x);
 int find_Julia(double cRe, double cIm, t_frctl *frctl);
+int key_hook(int key_code, t_frctl *frctl);
+int ft_exit(t_frctl *frctl);
+int ft_keyboard(int keycode, t_frctl *frctl);
 
 #endif //MLX_FRACTOL_H

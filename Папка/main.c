@@ -18,6 +18,13 @@ static int connect_init(t_connect *connect)
 	return (0);
 }
 
+int ft_hook(t_frctl *frctl)
+{
+	mlx_hook(frctl->mlx->mlx_win, 17, 0, ft_exit, frctl);
+	mlx_hook(frctl->mlx->mlx_win, 2, 0, ft_keyboard, frctl);
+}
+
+
 int main()
 {
 	t_frctl *frctl;
@@ -38,6 +45,7 @@ int main()
 	julia(frctl);
 	mlx_put_image_to_window(frctl->mlx->connect, frctl->mlx->mlx_win,
 							frctl->mlx->img, 0, 0);
+	ft_hook(frctl);
 	mlx_loop(frctl->mlx->connect);
 	return 0;
 }
