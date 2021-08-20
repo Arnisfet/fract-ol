@@ -64,5 +64,6 @@ int julia(t_frctl *frctl);
 int julia_dr(t_frctl *frctl);
 double get_y_toReal(t_frctl *frctl, int y);
 double get_x_toReal(t_frctl *frctl, int x);
+int find_Julia(double cRe, double cIm, t_frctl *frctl);
 
 #endif //MLX_FRACTOL_H
