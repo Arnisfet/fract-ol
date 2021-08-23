@@ -2,9 +2,11 @@ SRC = *.c
 
 OBJ = *.o
 
-MLX_MAC = -L /usr/local/lib/
+INC_MLX_MAC = -I includes/mlx.h
 
-INC_MLX_MAC = -I /usr/local/include/mlx.h
+INC_LIB = -I includes/libft.h
+
+INC_HEAD = -I includes/fractol.h
 
 CC = gcc
 
@@ -17,7 +19,7 @@ FLAGS = -lXext -lX11 -lmlx
 all: $(NAME)
 
 $(NAME):
-	gcc $(SRC)  $(MLX_MAC) -I. $(INC_MLX_MAC) $(FLAGS_MAC) -o $(NAME)
+	gcc $(SRC) ./libs/libft.a $(INC_LIB) $(INC_HEAD) $(INC_MLX_MAC) $(FLAGS_MAC) -o $(NAME)
 clean:
 	rm -f $(OBJ)
 	rm -f $(NAME)
