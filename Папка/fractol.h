@@ -4,9 +4,9 @@
 
 #ifndef MLX_FRACTOL_H
 #define MLX_FRACTOL_H
-#include "./includes/libft.h"
+
 #include <math.h>
-#include "includes/mlx.h"
+#include "./includes/mlx.h"
 #include <stdlib.h>
 #include <stdio.h>
 # define WD 1000
@@ -81,6 +81,9 @@ int find_serpinskiy(int x, int y, t_frctl *frctl);
 int	serpinskiy_dr(t_frctl *frctl);
 int serpinskiy(t_frctl *frctl);
 int	ft_put_fr_towin(t_frctl *frctl);
+int color (int n, t_frctl *frctl);
+int burning_ship(t_frctl *frctl);
+int	burn_dr(t_frctl *frctl);
 
 
 #endif //MLX_FRACTOL_H
