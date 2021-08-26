@@ -9,11 +9,25 @@
 #include "./includes/mlx.h"
 #include <stdlib.h>
 #include <stdio.h>
-# define WD 1000
-# define HG 1000
+# define WD 250
+# define HG 250
 # define PIX (frctl->mtrx->y * WD + frctl->mtrx->x)
 # define ESC 53
 # define SCRL_UP 4
+# define R 15
+# define G 5
+# define B 11
+# define Z 6
+# define X 7
+# define W 13
+# define S 1
+# define D 2
+# define A 0
+# define UP 126
+# define DOWN 125
+# define RIGHT 124
+# define LEFT 123
+
 
 typedef struct	t_struct
 {
@@ -49,8 +63,10 @@ typedef struct s_struct
 	int x;
 	int y;
 	int iter;
-	int color;
+	double cre;
+	double cim;
 	char flag;
+	int rgb[3];
 	t_cmplx z;
 }				t_mtrx;
 
@@ -80,10 +96,12 @@ void ft_hook(t_frctl *frctl);
 int find_serpinskiy(int x, int y, t_frctl *frctl);
 int	serpinskiy_dr(t_frctl *frctl);
 int serpinskiy(t_frctl *frctl);
-int	ft_put_fr_towin(t_frctl *frctl);
+void	ft_put_fr_towin(t_frctl *frctl);
 int color (int n, t_frctl *frctl);
 int burning_ship(t_frctl *frctl);
 int	burn_dr(t_frctl *frctl);
+void	next_draw(t_frctl *frctl);
+int	ft_change_color(t_frctl *frctl, int keycode);
 
 
 #endif //MLX_FRACTOL_H

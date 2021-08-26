@@ -15,38 +15,42 @@ int get_trgb(int t, int r, int g, int b)
 	return (t << 24 | r << 16 | g << 8 | b);
 }
 
-void    min_color(t_frctl *frctl, int n, int *rgb)
+void    min_color(t_frctl *frctl, int n)
 {
     if (n == 1)
-        frctl->mlx->addr[PIX] = get_trgb(1, rgb[0], rgb[1], rgb[2]+1);
-    else if (n == 2 || n == 3)
-        frctl->mlx->addr[PIX] = get_trgb(1, rgb[0], rgb[1], rgb[2]+2);
-    else if (n == 4 || n == 5)
-        frctl->mlx->addr[PIX] = get_trgb(1, rgb[0], rgb[1], rgb[2]+3);
-    else if (n == 6 || n == 7)
-        frctl->mlx->addr[PIX] = get_trgb(1, rgb[0], rgb[1], rgb[2]+4);
-    else if (n == 8 || n == 9)
-        frctl->mlx->addr[PIX] = get_trgb(1, rgb[0], rgb[1], rgb[2]+5);
+    	frctl->mlx->addr[PIX] = get_trgb(1, frctl->mtrx->rgb[0], frctl->mtrx->rgb[1], frctl->mtrx->rgb[2]);
+    if (n == 2 || n == 3)
+    	frctl->mlx->addr[PIX] = get_trgb(1, frctl->mtrx->rgb[0]+2,
+										 frctl->mtrx->rgb[1], frctl->mtrx->rgb[2]);
+    if (n == 4 || n == 5)
+    	frctl->mlx->addr[PIX] = get_trgb(1, frctl->mtrx->rgb[0]+5,
+										 frctl->mtrx->rgb[1], frctl->mtrx->rgb[2]);
+    if (n == 6 || n == 7)
+    	frctl->mlx->addr[PIX] = get_trgb(1, frctl->mtrx->rgb[0]+7,
+										 frctl->mtrx->rgb[1], frctl->mtrx->rgb[2]);
+    if (n == 8 || n == 9)
+    	frctl->mlx->addr[PIX] = get_trgb(1, frctl->mtrx->rgb[0]+9,
+										 frctl->mtrx->rgb[1], frctl->mtrx->rgb[2]);
 }
 
 int color (int n, t_frctl *frctl)
 {
-    int rgb[3];
     int i;
+	int rg[3];
 
-    rgb[0] = 26;
-    rgb[1] = 0;
-    rgb[2] = 74;
+	rg[0] = frctl->mtrx->rgb[0];
+	rg[1] = frctl->mtrx->rgb[1];
+	rg[2] = frctl->mtrx->rgb[2];
     i = frctl->mtrx->max_i/2;
-    min_color(frctl, n, rgb);
+    min_color(frctl, n);
     while (i != 0)
     {
-        if (n > i)
+        if (n < frctl->mtrx->max_i && n > 10)
         {
             if (n >= frctl->mtrx->max_i/i)
-                frctl->mlx->addr[PIX] = get_trgb(1, rgb[0], rgb[1], rgb[2]);
+            	frctl->mlx->addr[PIX] = get_trgb(1, rg[0], rg[1], rg[2]);
         }
-        i -= 1, rgb[2] += 5;
+        i -= 1, rg[1] += 2;
     }
 }
 

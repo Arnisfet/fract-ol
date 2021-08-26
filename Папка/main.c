@@ -53,7 +53,7 @@ void ft_malloc_fr(t_frctl *frctl)
 	frctl->mlx = (t_connect*)malloc(sizeof(t_connect));
 	if (!frctl->mlx)
 		ft_puterror("error!", frctl);
-	frctl->mtrx = (t_mtrx*)malloc(sizeof(t_frctl));
+	frctl->mtrx = (t_mtrx*)malloc(sizeof(t_mtrx));
 	if (!frctl->mtrx)
 		ft_puterror("error!", frctl);
 	frctl->cmplx = (t_cmplx*)malloc(sizeof(t_cmplx));
@@ -61,17 +61,26 @@ void ft_malloc_fr(t_frctl *frctl)
 		ft_puterror("error!", frctl);
 }
 
-int	ft_put_fr_towin(t_frctl *frctl)
+void	ft_put_fr_towin(t_frctl *frctl)
 {
 	if (frctl->mtrx->flag == 'm')
 		mandelbro_dr(frctl);
-	if (frctl->mtrx->flag == 'j')
+	else if (frctl->mtrx->flag == 'j')
 		julia_dr(frctl);
-	if (frctl->mtrx->flag == 's')
+	else if (frctl->mtrx->flag == 's')
 		serpinskiy_dr(frctl);
-	if (frctl->mtrx->flag == 'b')
-	    burning_ship(frctl);
-	mlx_put_image_to_window(frctl->mlx->connect, frctl->mlx->mlx_win, frctl->mlx->img, 0, 0);
+	else if (frctl->mtrx->flag == 'b')
+		burning_ship(frctl);
+}
+
+int	key_hook(int read_kode, t_frctl *frctl)
+{
+	printf("%d ", read_kode);
+}
+
+void ft_exitt(int key, t_frctl *frctl)
+{
+		exit (0);
 }
 
 int main(int ac, char **argv)
@@ -95,10 +104,12 @@ int main(int ac, char **argv)
 		else if (ft_strcmp("burningship", argv[1]) == 0)
 		    burning_ship(frctl);
 		else
-			ft_puterror("You must choose: mandelbrot, julia, serpinskiy",
+			ft_puterror("You must choose: mandelbrot, julia, serpinskiy, "
+						"burningship",
 						frctl);
-		ft_hook(frctl);
+//		mlx_key_hook(frctl->mlx->mlx_win, key_hook, frctl);
 		mlx_put_image_to_window(frctl->mlx->connect, frctl->mlx->mlx_win, frctl->mlx->img, 0, 0);
+		ft_hook(frctl);
 		mlx_loop(frctl->mlx->connect);
 	}
 	else

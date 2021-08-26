@@ -12,6 +12,8 @@ CC = gcc
 
 NAME = fractol
 
+LINX_LIB = libmlx_Linux.a
+
 FLAGS_MAC = -lmlx -framework OpenGL -framework AppKit
 
 FLAGS = -lXext -lX11
@@ -19,7 +21,7 @@ FLAGS = -lXext -lX11
 all: $(NAME)
 
 $(NAME):
-	gcc $(SRC) libmlx_Linux.a $(INC_LIB) $(INC_HEAD) $(INC_MLX_MAC) $(FLAGS) -o $(NAME)
+	gcc $(SRC) $(INC_LIB) $(INC_HEAD) $(INC_MLX_MAC) $(FLAGS_MAC) -o $(NAME)
 clean:
 	rm -f $(OBJ)
 	rm -f $(NAME)

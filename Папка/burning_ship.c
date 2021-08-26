@@ -57,6 +57,6 @@ int	burn_dr(t_frctl *frctl)
         }
         ++frctl->mtrx->y;
     }
-    mlx_put_image_to_window(frctl->mlx->connect, frctl->mlx->mlx_win, frctl->mlx->img, 0, 0);
+    frctl->mtrx->y = 0;
     return 0;
 }

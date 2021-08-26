@@ -24,8 +24,6 @@ int find_serpinskiy(int x, int y, t_frctl *frctl)
 	int i;
 
 	i = 0;
-	x *= frctl->mtrx->scale;
-	y *= frctl->mtrx->scale;
 	while (i < frctl->mtrx->max_i)
 	{
 		if ((x % 3 == 1) && (y % 3 == 1))
