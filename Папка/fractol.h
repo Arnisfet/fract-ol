@@ -14,6 +14,7 @@
 # define PIX (frctl->mtrx->y * WD + frctl->mtrx->x)
 # define ESC 53
 # define SCRL_UP 4
+# define SCRL_DOWN 5
 # define R 15
 # define G 5
 # define B 11
@@ -89,7 +90,7 @@ int find_Julia(double cRe, double cIm, t_frctl *frctl);
 int key_hook(int key_code, t_frctl *frctl);
 int ft_exit(t_frctl *frctl);
 int ft_keyboard(int keycode, t_frctl *frctl);
-int ft_mouse(int keycode, t_frctl *frctl);
+int	ft_mouse(int button, int x, int y, t_frctl *frctl);
 void ft_malloc_fr(t_frctl *frctl);
 void	ft_puterror(char *str, t_frctl *frctl);
 void ft_hook(t_frctl *frctl);
@@ -100,8 +101,11 @@ void	ft_put_fr_towin(t_frctl *frctl);
 int color (int n, t_frctl *frctl);
 int burning_ship(t_frctl *frctl);
 int	burn_dr(t_frctl *frctl);
+int findBurningship(double cr, double ci, t_frctl *frctl);
 void	next_draw(t_frctl *frctl);
 int	ft_change_color(t_frctl *frctl, int keycode);
+int my_frctl(t_frctl *frctl);
+int	frctl_dr(t_frctl *frctl);
 
 
 #endif //MLX_FRACTOL_H

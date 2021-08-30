@@ -41,13 +41,13 @@ int	ft_change_color(t_frctl *frctl, int keycode)
 int	ft_move_frctl(int keycode, t_frctl *frctl)
 {
 	if (keycode == W || keycode == UP)
-		frctl->mtrx->offset_y += 0.5 / frctl->mtrx->scale;
-	if (keycode == S || keycode == DOWN)
 		frctl->mtrx->offset_y -= 0.5 / frctl->mtrx->scale;
+	if (keycode == S || keycode == DOWN)
+		frctl->mtrx->offset_y += 0.5 / frctl->mtrx->scale;
 	if (keycode == A || keycode == LEFT)
-		frctl->mtrx->offset_x += 0.5 / frctl->mtrx->scale;
-	if (keycode == D || keycode == RIGHT)
 		frctl->mtrx->offset_x -= 0.5 / frctl->mtrx->scale;
+	if (keycode == D || keycode == RIGHT)
+		frctl->mtrx->offset_x += 0.5 / frctl->mtrx->scale;
 	next_draw(frctl);
 }
 
@@ -73,14 +73,14 @@ int	ft_keyboard(int keycode, t_frctl *frctl)
 	return 0;
 }
 
-int	ft_mouse(int keycode, t_frctl *frctl)
+int	ft_mouse(int button, int x, int y, t_frctl *frctl)
 {
-	if (keycode == SCRL_UP)
-	{
+	if (button == SCRL_UP)
 		frctl->mtrx->scale *= 1.1;
-	}
-	ft_put_fr_towin(frctl);
-	return 0;
+	if (button == SCRL_DOWN)
+		frctl->mtrx->scale /= 1.1;
+	next_draw(frctl);
+	return (0);
 }
 
 void	next_draw(t_frctl *frctl)

@@ -25,11 +25,10 @@ int	mandelbro_dr(t_frctl *frctl)
 {
 	while (frctl->mtrx->y < HG)
 	{
-
-		double ci = get_y_toReal(frctl, frctl->mtrx->y);
 		frctl->mtrx->x = 0;
 		while (frctl->mtrx->x < WD)
 		{
+			double ci = get_y_toReal(frctl, frctl->mtrx->y);
 			double cr = get_x_toReal(frctl, frctl->mtrx->x);
 			int n = findMandelbrot(cr, ci, frctl);
 			if (n != frctl->mtrx->max_i)
@@ -46,16 +45,17 @@ int	mandelbro_dr(t_frctl *frctl)
 
 int findMandelbrot(double cr, double ci, t_frctl *frctl)
 {
-    double zr = 0.0, zi = 0.0;
+    double NewRe = 0.0, NewIm = 0.0;
     int iter;
 
     iter = 0;
-    while (iter < frctl->mtrx->max_i && zr * zr + zi * zi <= 4.0)
+    while (iter < frctl->mtrx->max_i && NewRe * NewRe + NewIm * NewIm <= 4.0)
     {
-        double tempX = (zr * zr) - (zi * zi) + cr;
-        zi = (2.0 * zr * zi) + ci;
-        zr = tempX;
-        iter++;
+		double oldRe = NewRe;
+		double oldIm = NewIm;
+		NewRe = oldRe * oldRe - oldIm * oldIm +cr;
+		NewIm = 2 * oldRe*oldIm + ci;
+		iter++;
     }
     return (iter);
 }

@@ -9,13 +9,16 @@ int burning_ship(t_frctl *frctl)
     frctl->mtrx->max_x = 2.0;
     frctl->mtrx->min_x = -2.0;
     frctl->mtrx->min_y = -2.0;
-    frctl->mtrx->max_i = 500;
+    frctl->mtrx->max_i = 1000;
     frctl->mtrx->iter = 0;
     frctl->mtrx->x = 0;
     frctl->mtrx->y = 0;
     frctl->mtrx->max_y = frctl->mtrx->min_y + (frctl->mtrx->max_x - frctl->mtrx->min_y) * HG / WD;
     frctl->mtrx->scale = 1;
     frctl->mtrx->flag = 'b';
+	frctl->mtrx->rgb[0] = 23;
+	frctl->mtrx->rgb[1] = 5;
+	frctl->mtrx->rgb[2] = 78;
     burn_dr(frctl);
     return 0;
 }
@@ -28,12 +31,11 @@ int findBurningship(double cr, double ci, t_frctl *frctl)
     iter = 0;
     while (iter < frctl->mtrx->max_i && zr * zr + zi * zi <= 4.0)
     {
-        double tempX = (zr * zr) - (zi * zi) + cr;
-        zi = fabs(2.0 * zr * zi) + ci;
-        zr = tempX;
+        double tempX = zr * zr - zi * zi + cr;
+        zi = fabs(2.0 * zr * zi + ci);
+		zi *= -1;
+        zr = fabs(tempX);
         iter++;
-        zr = fabs(zr);
-        zi *= -1;
     }
     return (iter);
 }
@@ -43,11 +45,12 @@ int	burn_dr(t_frctl *frctl)
 {
     while (frctl->mtrx->y < HG)
     {
-        double ci = get_y_toReal(frctl, frctl->mtrx->y);
         frctl->mtrx->x = 0;
         while (frctl->mtrx->x < WD)
         {
+			double ci = get_y_toReal(frctl, frctl->mtrx->y);
             double cr = get_x_toReal(frctl, frctl->mtrx->x);
+//			printf("%f", ci);
             int n = findBurningship(cr, ci, frctl);
             if (n != frctl->mtrx->max_i)
                 color(n, frctl);

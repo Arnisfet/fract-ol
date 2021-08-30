@@ -70,7 +70,9 @@ void	ft_put_fr_towin(t_frctl *frctl)
 	else if (frctl->mtrx->flag == 's')
 		serpinskiy_dr(frctl);
 	else if (frctl->mtrx->flag == 'b')
-		burning_ship(frctl);
+		burn_dr(frctl);
+	else if (frctl->mtrx->flag == 'f')
+		frctl_dr(frctl);
 }
 
 int	key_hook(int read_kode, t_frctl *frctl)
@@ -103,17 +105,19 @@ int main(int ac, char **argv)
 			serpinskiy(frctl);
 		else if (ft_strcmp("burningship", argv[1]) == 0)
 		    burning_ship(frctl);
+		else if (ft_strcmp("my_frctl", argv[1]) == 0)
+			my_frctl(frctl);
 		else
-			ft_puterror("You must choose: mandelbrot, julia, serpinskiy, "
-						"burningship",
+			ft_puterror("Choose: mandelbrot, julia, serpinskiy, burningship",
 						frctl);
-//		mlx_key_hook(frctl->mlx->mlx_win, key_hook, frctl);
+		mlx_mouse_hook(frctl->mlx->mlx_win, key_hook, frctl);
 		mlx_put_image_to_window(frctl->mlx->connect, frctl->mlx->mlx_win, frctl->mlx->img, 0, 0);
 		ft_hook(frctl);
 		mlx_loop(frctl->mlx->connect);
 	}
 	else
-		ft_puterror("You must choose: mandelbrot, julia, serpinskiy, burningship", frctl);
+		ft_puterror("You must choose: mandelbrot, julia, serpinskiy, "
+					"burningship, or my_frctl", frctl);
 	return 0;
 }
 

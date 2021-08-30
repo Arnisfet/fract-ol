@@ -10,7 +10,7 @@ int serpinskiy(t_frctl *frctl)
 	frctl->mtrx->max_x = 2.0;
 	frctl->mtrx->min_x = -2.0;
 	frctl->mtrx->min_y = -2.0;
-	frctl->mtrx->max_i = 8;
+	frctl->mtrx->max_i = 5;
 	frctl->mtrx->iter = 0;
 	frctl->mtrx->x = 0;
 	frctl->mtrx->y = 0;
@@ -26,6 +26,10 @@ int find_serpinskiy(int x, int y, t_frctl *frctl)
 	i = 0;
 	while (i < frctl->mtrx->max_i)
 	{
+		x /= frctl->mtrx->scale;
+		y /= frctl->mtrx->scale;
+		x += frctl->mtrx->offset_x;
+		y += frctl->mtrx->offset_y;
 		if ((x % 3 == 1) && (y % 3 == 1))
 			return (0);
 		x /= 3;
@@ -42,6 +46,7 @@ int	serpinskiy_dr(t_frctl *frctl)
 		frctl->mtrx->x = 0;
 		while (frctl->mtrx->x < WD)
 		{
+
 			int n = find_serpinskiy(frctl->mtrx->x, frctl->mtrx->y, frctl);
 			if (n == 0)
 				frctl->mlx->addr[PIX] = get_trgb(1, 225, 225, 225);
@@ -51,5 +56,6 @@ int	serpinskiy_dr(t_frctl *frctl)
 		}
 		++frctl->mtrx->y;
 	}
+	frctl->mtrx->y = 0;
 	return 0;
 }

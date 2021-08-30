@@ -12,8 +12,8 @@ int julia(t_frctl *frctl)
 	frctl->mtrx->max_y = frctl->mtrx->min_y + (frctl->mtrx->max_x - frctl->mtrx->min_y) * HG / WD;
 	frctl->mtrx->scale = 1;
 	frctl->mtrx->flag = 'j';
-	frctl->mtrx->cre = -0.79;
-	frctl->mtrx->cim = -0.27;
+	frctl->mtrx->cre = -0.75;
+	frctl->mtrx->cim = 0.46;
 	julia_dr(frctl);
 	return 0;
 }
