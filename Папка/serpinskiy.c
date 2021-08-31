@@ -3,7 +3,7 @@
 //
 #include "fractol.h"
 
-int serpinskiy(t_frctl *frctl)
+void	serpinskiy(t_frctl *frctl)
 {
 	frctl->mtrx->offset_y = 0;
 	frctl->mtrx->offset_x = 0;
@@ -19,9 +19,9 @@ int serpinskiy(t_frctl *frctl)
 	serpinskiy_dr(frctl);
 }
 
-int find_serpinskiy(int x, int y, t_frctl *frctl)
+int	find_serpinskiy(int x, int y, t_frctl *frctl)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < frctl->mtrx->max_i)
@@ -41,21 +41,22 @@ int find_serpinskiy(int x, int y, t_frctl *frctl)
 
 int	serpinskiy_dr(t_frctl *frctl)
 {
+	int	n;
+
 	while (frctl->mtrx->y < HG)
 	{
 		frctl->mtrx->x = 0;
 		while (frctl->mtrx->x < WD)
 		{
-
-			int n = find_serpinskiy(frctl->mtrx->x, frctl->mtrx->y, frctl);
+			n = find_serpinskiy(frctl->mtrx->x, frctl->mtrx->y, frctl);
 			if (n == 0)
 				frctl->mlx->addr[PIX] = get_trgb(1, 225, 225, 225);
 			else
-				frctl->mlx->addr[PIX] = get_trgb(1, 30, 50,205);
+				frctl->mlx->addr[PIX] = get_trgb(1, 30, 50, 205);
 			++frctl->mtrx->x;
 		}
 		++frctl->mtrx->y;
 	}
 	frctl->mtrx->y = 0;
-	return 0;
+	return (0);
 }

@@ -4,22 +4,34 @@
 
 #include "fractol.h"
 
-void ft_hook(t_frctl *frctl)
+void	ft_hook(t_frctl *frctl)
 {
 	mlx_hook(frctl->mlx->mlx_win, 2, 0, ft_keyboard, frctl);
 	mlx_hook(frctl->mlx->mlx_win, 17, 5, ft_exit, frctl);
 	mlx_hook(frctl->mlx->mlx_win, 4, 0, ft_mouse, frctl);
+	mlx_hook(frctl->mlx->mlx_win, 6, 0, ft_motion, frctl);
+}
+
+int	ft_motion(int x, int y, t_frctl *frctl)
+{
+	if (frctl->mtrx->flag == 'j')
+	{
+		frctl->mtrx->cim += 0.002;
+		frctl->mtrx->cre += 0.002;
+	}
+	next_draw(frctl);
+	return (0);
 }
 
 int	ft_exit(t_frctl *frctl)
 {
 	if (frctl != NULL)
 	{
-		if(frctl->mlx != NULL)
-		free(frctl->mlx);
-		if(frctl->mtrx != NULL)
+		if (frctl->mlx != NULL)
+			free(frctl->mlx);
+		if (frctl->mtrx != NULL)
 			free(frctl->mtrx);
-		if(frctl->cmplx != NULL)
+		if (frctl->cmplx != NULL)
 			free(frctl->cmplx);
 		free(frctl);
 	}
@@ -35,7 +47,7 @@ int	ft_change_color(t_frctl *frctl, int keycode)
 	if (keycode == B)
 		frctl->mtrx->rgb[2] += 10;
 	next_draw(frctl);
-	return 0;
+	return (0);
 }
 
 int	ft_move_frctl(int keycode, t_frctl *frctl)
@@ -49,6 +61,7 @@ int	ft_move_frctl(int keycode, t_frctl *frctl)
 	if (keycode == D || keycode == RIGHT)
 		frctl->mtrx->offset_x += 0.5 / frctl->mtrx->scale;
 	next_draw(frctl);
+	return (0);
 }
 
 int	ft_keyboard(int keycode, t_frctl *frctl)
@@ -67,10 +80,11 @@ int	ft_keyboard(int keycode, t_frctl *frctl)
 		frctl->mtrx->cre += 0.002;
 		next_draw(frctl);
 	}
-	else if (keycode == W || keycode == A || keycode == S || keycode == D ||
-	keycode == UP || keycode == LEFT || keycode == DOWN || keycode == RIGHT)
+	else if (keycode == W || keycode == A || keycode == S || keycode == D
+		||keycode == UP || keycode == LEFT || keycode == DOWN
+		|| keycode == RIGHT)
 		ft_move_frctl(keycode, frctl);
-	return 0;
+	return (0);
 }
 
 int	ft_mouse(int button, int x, int y, t_frctl *frctl)
@@ -87,5 +101,6 @@ void	next_draw(t_frctl *frctl)
 {
 	mlx_clear_window(frctl->mlx->connect, frctl->mlx->mlx_win);
 	ft_put_fr_towin(frctl);
-	mlx_put_image_to_window(frctl->mlx->connect, frctl->mlx->mlx_win, frctl->mlx->img, 0, 0);
+	mlx_put_image_to_window(frctl->mlx->connect, frctl->mlx->mlx_win,
+		frctl->mlx->img, 0, 0);
 }

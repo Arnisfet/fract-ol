@@ -1,10 +1,10 @@
 SRC = *.c
 
-OBJ = *.o
+OBJ = $(SRC:.c=.o)
 
 INC_MLX_MAC = -I includes/mlx.h
 
-INC_LIB = -I includes/libft.h
+INC_LIB = -I libft/libft.h
 
 INC_HEAD = -I. 
 
@@ -14,6 +14,8 @@ NAME = fractol
 
 LINX_LIB = libmlx_Linux.a
 
+LIBFT = libft/libft.a
+
 FLAGS_MAC = -lmlx -framework OpenGL -framework AppKit
 
 FLAGS = -lXext -lX11
@@ -21,9 +23,14 @@ FLAGS = -lXext -lX11
 all: $(NAME)
 
 $(NAME):
-	gcc $(SRC) $(INC_LIB) $(INC_HEAD) $(INC_MLX_MAC) $(FLAGS_MAC) -o $(NAME)
+	make -C libft
+	gcc $(SRC) $(INC_LIB) $(LIBFT) $(INC_HEAD) $(INC_MLX_MAC) $(FLAGS_MAC) -o $(NAME)
 clean:
 	rm -f $(OBJ)
-	rm -f $(NAME)
+	rm -f ./libft/$(OBJ)
 
-re: clean all
+fclean: clean
+	rm -f $(NAME)
+	rm -f ./libft/libft.a
+
+re: fclean all

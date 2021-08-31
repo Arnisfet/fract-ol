@@ -9,8 +9,9 @@
 #include "./includes/mlx.h"
 #include <stdlib.h>
 #include <stdio.h>
-# define WD 250
-# define HG 250
+#include "./libft/libft.h"
+# define WD 300
+# define HG 300
 # define PIX (frctl->mtrx->y * WD + frctl->mtrx->x)
 # define ESC 53
 # define SCRL_UP 4
@@ -66,6 +67,8 @@ typedef struct s_struct
 	int iter;
 	double cre;
 	double cim;
+	double cre_2;
+	double cim_2;
 	char flag;
 	int rgb[3];
 	t_cmplx z;
@@ -78,34 +81,35 @@ typedef struct s_frctl
 	t_cmplx *cmplx;
 }				t_frctl;
 
-int get_trgb(int t, int r, int g, int b);
-int mandelbrot (t_frctl *frctl);
-int	mandelbro_dr(t_frctl *frctl);
-int findMandelbrot(double cr, double ci, t_frctl *frctl);
-int julia(t_frctl *frctl);
-int julia_dr(t_frctl *frctl);
-double get_y_toReal(t_frctl *frctl, int y);
-double get_x_toReal(t_frctl *frctl, int x);
-int find_Julia(double cRe, double cIm, t_frctl *frctl);
-int key_hook(int key_code, t_frctl *frctl);
-int ft_exit(t_frctl *frctl);
-int ft_keyboard(int keycode, t_frctl *frctl);
-int	ft_mouse(int button, int x, int y, t_frctl *frctl);
-void ft_malloc_fr(t_frctl *frctl);
+int		get_trgb(int t, int r, int g, int b);
+int		mandelbrot (t_frctl *frctl);
+int		mandelbro_dr(t_frctl *frctl);
+int		findMandelbrot(double cr, double ci, t_frctl *frctl);
+int		julia(t_frctl *frctl);
+int		julia_dr(t_frctl *frctl);
+double	get_toReal(int x, int y, t_frctl *frctl);
+int		find_Julia(double cRe, double cIm, t_frctl *frctl);
+int		key_hook(int key_code, t_frctl *frctl);
+int		ft_exit(t_frctl *frctl);
+int		ft_keyboard(int keycode, t_frctl *frctl);
+int		ft_mouse(int button, int x, int y, t_frctl *frctl);
+void	ft_malloc_fr(t_frctl *frctl);
 void	ft_puterror(char *str, t_frctl *frctl);
-void ft_hook(t_frctl *frctl);
-int find_serpinskiy(int x, int y, t_frctl *frctl);
-int	serpinskiy_dr(t_frctl *frctl);
-int serpinskiy(t_frctl *frctl);
+void	ft_hook(t_frctl *frctl);
+int		find_serpinskiy(int x, int y, t_frctl *frctl);
+int		serpinskiy_dr(t_frctl *frctl);
+void	serpinskiy(t_frctl *frctl);
 void	ft_put_fr_towin(t_frctl *frctl);
-int color (int n, t_frctl *frctl);
-int burning_ship(t_frctl *frctl);
-int	burn_dr(t_frctl *frctl);
-int findBurningship(double cr, double ci, t_frctl *frctl);
+int		color (int n, t_frctl *frctl);
+int		burning_ship(t_frctl *frctl);
+int		burn_dr(t_frctl *frctl);
+int		findBurningship(double cr, double ci, t_frctl *frctl);
 void	next_draw(t_frctl *frctl);
-int	ft_change_color(t_frctl *frctl, int keycode);
-int my_frctl(t_frctl *frctl);
-int	frctl_dr(t_frctl *frctl);
+int		ft_change_color(t_frctl *frctl, int keycode);
+int		my_frctl(t_frctl *frctl);
+int		frctl_dr(t_frctl *frctl);
+int		ft_motion(int x, int y, t_frctl *frctl);
+int		ft_choose(char *argv, t_frctl *frctl);
 
 
 #endif //MLX_FRACTOL_H
