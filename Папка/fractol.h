@@ -2,14 +2,14 @@
 // Created by vitya on 02.08.2021.
 //
 
-#ifndef MLX_FRACTOL_H
-#define MLX_FRACTOL_H
+#ifndef FRACTOL_H
+# define FRACTOL_H
 
-#include <math.h>
-#include "./includes/mlx.h"
-#include <stdlib.h>
-#include <stdio.h>
-#include "./libft/libft.h"
+# include <math.h>
+# include "./includes/mlx.h"
+# include <stdlib.h>
+# include <stdio.h>
+# include "./libft/libft.h"
 # define WD 300
 # define HG 300
 # define PIX (frctl->mtrx->y * WD + frctl->mtrx->x)
@@ -42,43 +42,43 @@ typedef struct	t_struct
 	int		endian;
 }				t_connect;
 
-typedef struct s_cmplx
+typedef struct	s_cmplx
 {
-	double re;
-	double im;
-	double aa;
-	double twoab;
-	double ca;
-	double cb;
+	double	re;
+	double	im;
+	double	aa;
+	double	twoab;
+	double	ca;
+	double	cb;
 }				t_cmplx;
 
 typedef struct s_struct
 {
-	double offset_x;
-	double offset_y;
-	double max_x;
-	double min_x;
-	double max_y;
-	double min_y;
-	double scale;
-	int max_i;
-	int x;
-	int y;
-	int iter;
-	double cre;
-	double cim;
-	double cre_2;
-	double cim_2;
-	char flag;
-	int rgb[3];
-	t_cmplx z;
+	double	offset_x;
+	double	offset_y;
+	double	max_x;
+	double	min_x;
+	double	max_y;
+	double	min_y;
+	double	scale;
+	int		max_i;
+	int		x;
+	int 	y;
+	int		iter;
+	double	cre;
+	double	cim;
+	double	cre_2;
+	double	cim_2;
+	char	flag;
+	int		rgb[3];
+	t_cmplx	z;
 }				t_mtrx;
 
 typedef struct s_frctl
 {
-	t_connect *mlx;
-	t_mtrx *mtrx;
-	t_cmplx *cmplx;
+	t_connect	*mlx;
+	t_mtrx		*mtrx;
+	t_cmplx		*cmplx;
 }				t_frctl;
 
 int		get_trgb(int t, int r, int g, int b);
@@ -109,7 +109,8 @@ int		ft_change_color(t_frctl *frctl, int keycode);
 int		my_frctl(t_frctl *frctl);
 int		frctl_dr(t_frctl *frctl);
 int		ft_motion(int x, int y, t_frctl *frctl);
-int		ft_choose(char *argv, t_frctl *frctl);
+int		ft_choose(char **argv, t_frctl *frctl, int ac);
+int		choose_julia(t_frctl *frctl, char **argv);
 
 
 #endif //MLX_FRACTOL_H

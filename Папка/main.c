@@ -51,21 +51,22 @@ int	main(int ac, char **argv)
 	t_frctl	*frctl;
 
 	frctl = NULL;
-	if (ac == 2)
+	if (ac >= 2)
 	{
 		frctl = (t_frctl *)malloc(sizeof(t_frctl));
 		if (!frctl)
 			return (0);
 		ft_malloc_fr(frctl);
 		connect_init(frctl->mlx);
-		ft_choose(argv[1], frctl);
+		ft_choose(argv, frctl, ac);
 		mlx_put_image_to_window(frctl->mlx->connect, frctl->mlx->mlx_win,
 			frctl->mlx->img, 0, 0);
 		ft_hook(frctl);
 		mlx_loop(frctl->mlx->connect);
 	}
 	else
-		ft_puterror("You must choose: mandelbrot, julia, serpinskiy, "
-			"burningship, or my_frctl", frctl);
+		ft_puterror("Choose:\n--->mandelbrot\n--->julia (2, 3)"
+					"\n--->serpinskiy\n--->burningship\n--->triple",
+					frctl);
 	return (0);
 }
