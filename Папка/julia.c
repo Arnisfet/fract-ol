@@ -30,11 +30,12 @@ int	julia_dr(t_frctl *frctl)
 		frctl->mtrx->x = 0;
 		while (frctl->mtrx->x < WD)
 		{
+			frctl->mtrx->PIX = frctl->mtrx->y * WD + frctl->mtrx->x;
 			n = find_Julia(cRe, cIm, frctl);
 			if (n != frctl->mtrx->max_i)
 				color(n, frctl);
 			else
-				frctl->mlx->addr[PIX] = get_trgb(1, 225, 225, 225);
+				frctl->mlx->addr[frctl->mtrx->PIX] = get_trgb(1, 225, 225, 225);
 			++frctl->mtrx->x;
 		}
 		++frctl->mtrx->y;

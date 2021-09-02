@@ -12,7 +12,6 @@
 # include "./libft/libft.h"
 # define WD 300
 # define HG 300
-# define PIX (frctl->mtrx->y * WD + frctl->mtrx->x)
 # define ESC 53
 # define SCRL_UP 4
 # define SCRL_DOWN 5
@@ -30,8 +29,7 @@
 # define RIGHT 124
 # define LEFT 123
 
-
-typedef struct	t_struct
+typedef struct t_struct
 {
 	void	*connect;
 	void	*mlx_win;
@@ -42,7 +40,7 @@ typedef struct	t_struct
 	int		endian;
 }				t_connect;
 
-typedef struct	s_cmplx
+typedef struct s_cmplx
 {
 	double	re;
 	double	im;
@@ -63,7 +61,7 @@ typedef struct s_struct
 	double	scale;
 	int		max_i;
 	int		x;
-	int 	y;
+	int		y;
 	int		iter;
 	double	cre;
 	double	cim;
@@ -71,6 +69,7 @@ typedef struct s_struct
 	double	cim_2;
 	char	flag;
 	int		rgb[3];
+	int		PIX;
 	t_cmplx	z;
 }				t_mtrx;
 
@@ -82,7 +81,7 @@ typedef struct s_frctl
 }				t_frctl;
 
 int		get_trgb(int t, int r, int g, int b);
-int		mandelbrot (t_frctl *frctl);
+int		mandelbrot(t_frctl *frctl);
 int		mandelbro_dr(t_frctl *frctl);
 int		findMandelbrot(double cr, double ci, t_frctl *frctl);
 int		julia(t_frctl *frctl);
@@ -100,7 +99,7 @@ int		find_serpinskiy(int x, int y, t_frctl *frctl);
 int		serpinskiy_dr(t_frctl *frctl);
 void	serpinskiy(t_frctl *frctl);
 void	ft_put_fr_towin(t_frctl *frctl);
-int		color (int n, t_frctl *frctl);
+int		color(int n, t_frctl *frctl);
 int		burning_ship(t_frctl *frctl);
 int		burn_dr(t_frctl *frctl);
 int		findBurningship(double cr, double ci, t_frctl *frctl);
@@ -111,6 +110,5 @@ int		frctl_dr(t_frctl *frctl);
 int		ft_motion(int x, int y, t_frctl *frctl);
 int		ft_choose(char **argv, t_frctl *frctl, int ac);
 int		choose_julia(t_frctl *frctl, char **argv);
-
-
+int		ft_move_frctl(int keycode, t_frctl *frctl);
 #endif //MLX_FRACTOL_H

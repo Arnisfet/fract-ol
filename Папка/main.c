@@ -66,7 +66,7 @@ int	main(int ac, char **argv)
 	}
 	else
 		ft_puterror("Choose:\n--->mandelbrot\n--->julia (2, 3)"
-					"\n--->serpinskiy\n--->burningship\n--->triple",
-					frctl);
+			"\n--->serpinskiy\n--->burningship\n--->triple",
+			frctl);
 	return (0);
 }

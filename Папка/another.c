@@ -35,6 +35,9 @@ int	ft_choose(char **argv, t_frctl *frctl, int ac)
 	else if (ac == 3)
 		choose_julia(frctl, argv);
 	else
+		ft_puterror("Choose:\n--->mandelbrot\n--->julia (2, 3)"
+			"\n--->serpinskiy\n--->burningship\n--->triple",
+			frctl);
 	return (0);
 }
 
@@ -54,6 +57,6 @@ int	choose_julia(t_frctl *frctl, char **argv)
 	}
 	else
 		ft_puterror("Choose:\n--->julia \n--->julia 2\n--->julia 3",
-					frctl);
-		return (0);
+			frctl);
+	return (0);
 }

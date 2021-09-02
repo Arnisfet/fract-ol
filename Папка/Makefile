@@ -23,14 +23,19 @@ FLAGS = -lXext -lX11
 all: $(NAME)
 
 $(NAME):
-	make -C libft
-	gcc $(SRC) $(INC_LIB) $(LIBFT) $(INC_HEAD) $(INC_MLX_MAC) $(FLAGS_MAC) -o $(NAME)
+	@make -C libft
+	@echo "\t\t\t\t\033[0;41mLibft is ready!"
+	@gcc $(SRC) $(INC_LIB) $(LIBFT) $(INC_HEAD) $(INC_MLX_MAC) $(FLAGS_MAC) -o $(NAME)
+	@echo "\t\t\t\t\033[0;31mMake fractol.exe"
 clean:
-	rm -f $(OBJ)
-	rm -f ./libft/$(OBJ)
+	@rm -f $(OBJ)
+	@rm -f ./libft/$(OBJ)
+	@echo "\t\t\t\t\033[0;31mClean"
 
 fclean: clean
-	rm -f $(NAME)
-	rm -f ./libft/libft.a
+	@rm -f $(NAME)
+	@rm -f ./libft/libft.a
+	@echo "\t\t\t\t\033[0;31m Deleate fractol.exe"
+	
 
 re: fclean all

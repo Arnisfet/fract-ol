@@ -54,13 +54,14 @@ int	burn_dr(t_frctl *frctl)
 		frctl->mtrx->x = 0;
 		while (frctl->mtrx->x < WD)
 		{
+			frctl->mtrx->PIX = frctl->mtrx->y * WD + frctl->mtrx->x;
 			get_toReal(frctl->mtrx->x, frctl->mtrx->y, frctl);
 			n = findBurningship(frctl->mtrx->cre, frctl->mtrx->cim,
 					frctl);
 			if (n != frctl->mtrx->max_i)
 				color(n, frctl);
 			else
-				frctl->mlx->addr[PIX] = get_trgb(1, 225, 225, 225);
+				frctl->mlx->addr[frctl->mtrx->PIX] = get_trgb(1, 225, 225, 225);
 			++frctl->mtrx->x;
 		}
 		++frctl->mtrx->y;

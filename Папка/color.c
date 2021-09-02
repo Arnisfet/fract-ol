@@ -21,20 +21,24 @@ int	get_trgb(int t, int r, int g, int b)
 void	min_color(t_frctl *frctl, int n)
 {
 	if (n == 1)
-		frctl->mlx->addr[PIX] = get_trgb(1, frctl->mtrx->rgb[0],
-				 frctl->mtrx->rgb[1], frctl->mtrx->rgb[2]);
+		frctl->mlx->addr[frctl->mtrx->PIX] = get_trgb(1,
+				 frctl->mtrx->rgb[0], frctl->mtrx->rgb[1],
+				 frctl->mtrx->rgb[2]);
 	if (n == 2 || n == 3)
-		frctl->mlx->addr[PIX] = get_trgb(1, frctl->mtrx->rgb[0] + 2,
-				 frctl->mtrx->rgb[1], frctl->mtrx->rgb[2]);
+		frctl->mlx->addr[frctl->mtrx->PIX] = get_trgb(1,
+				frctl->mtrx->rgb[0] + 2, frctl->mtrx->rgb[1],
+				frctl->mtrx->rgb[2]);
 	if (n == 4 || n == 5)
-		frctl->mlx->addr[PIX] = get_trgb(1, frctl->mtrx->rgb[0] + 5,
-				 frctl->mtrx->rgb[1], frctl->mtrx->rgb[2]);
+		frctl->mlx->addr[frctl->mtrx->PIX] = get_trgb(1, frctl->mtrx->rgb[0]
+				+ 5, frctl->mtrx->rgb[1], frctl->mtrx->rgb[2]);
 	if (n == 6 || n == 7)
-		frctl->mlx->addr[PIX] = get_trgb(1, frctl->mtrx->rgb[0] + 7,
-				 frctl->mtrx->rgb[1], frctl->mtrx->rgb[2]);
+		frctl->mlx->addr[frctl->mtrx->PIX] = get_trgb(1,
+				 frctl->mtrx->rgb[0] + 7, frctl->mtrx->rgb[1],
+				 frctl->mtrx->rgb[2]);
 	if (n == 8 || n == 9)
-		frctl->mlx->addr[PIX] = get_trgb(1, frctl->mtrx->rgb[0] + 9,
-				 frctl->mtrx->rgb[1], frctl->mtrx->rgb[2]);
+		frctl->mlx->addr[frctl->mtrx->PIX] = get_trgb(1,
+				 frctl->mtrx->rgb[0] + 9, frctl->mtrx->rgb[1],
+				 frctl->mtrx->rgb[2]);
 }
 
 int	color(int n, t_frctl *frctl)
@@ -52,7 +56,8 @@ int	color(int n, t_frctl *frctl)
 		if (n < frctl->mtrx->max_i && n > 10)
 		{
 			if (n >= frctl->mtrx->max_i / i)
-				frctl->mlx->addr[PIX] = get_trgb(1, rg[0], rg[1], rg[2]);
+				frctl->mlx->addr[frctl->mtrx->PIX]
+					= get_trgb(1, rg[0], rg[1], rg[2]);
 		}
 		i--, rg[1] += 2;
 	}

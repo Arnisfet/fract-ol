@@ -15,9 +15,9 @@ int	mandelbrot(t_frctl *frctl)
 			- frctl->mtrx->min_y) * HG / WD;
 	frctl->mtrx->scale = 1;
 	frctl->mtrx->flag = 'm';
-	frctl->mtrx->rgb[0] = 23;
-	frctl->mtrx->rgb[1] = 5;
-	frctl->mtrx->rgb[2] = 78;
+	frctl->mtrx->rgb[0] = 232;
+	frctl->mtrx->rgb[1] = 179;
+	frctl->mtrx->rgb[2] = 212;
 	mandelbro_dr(frctl);
 	return (0);
 }
@@ -31,12 +31,13 @@ int	mandelbro_dr(t_frctl *frctl)
 		frctl->mtrx->x = 0;
 		while (frctl->mtrx->x < WD)
 		{
+			frctl->mtrx->PIX = frctl->mtrx->y * WD + frctl->mtrx->x;
 			get_toReal(frctl->mtrx->x, frctl->mtrx->y, frctl);
 			n = findMandelbrot(frctl->mtrx->cre, frctl->mtrx->cim, frctl);
 			if (n != frctl->mtrx->max_i)
 				color(n, frctl);
 			else
-				frctl->mlx->addr[PIX] = get_trgb(1, 225, 225, 225);
+				frctl->mlx->addr[frctl->mtrx->PIX] = get_trgb(1, 225, 225, 225);
 			++frctl->mtrx->x;
 		}
 		++frctl->mtrx->y;
