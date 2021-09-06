@@ -5,7 +5,7 @@ int	julia(t_frctl *frctl)
 	frctl->mtrx->max_x = 2.0;
 	frctl->mtrx->min_x = -2.0;
 	frctl->mtrx->min_y = -2.0;
-	frctl->mtrx->max_i = 500;
+	frctl->mtrx->max_i = 700;
 	frctl->mtrx->iter = 0;
 	frctl->mtrx->x = 0;
 	frctl->mtrx->y = 0;
