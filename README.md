@@ -13,4 +13,4 @@
 
  And Julia set:
 
- ![Julia]()
+ ![Julia](https://github.com/Arnisfet/fract-ol/blob/master/images/Julia_set.gif?raw=true)
